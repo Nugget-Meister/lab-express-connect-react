@@ -18,15 +18,28 @@ const LogDetails = () => {
         .then(json => updateLog(json))
     }, [])
 
-    // console.log(log)
+    const deleteLogReq = (index) => {
+
+        const options = {
+            method: "DELETE",
+        }
+        if(confirm("Delete this message?")) {
+            fetch(`${API}/logs/${index}`, options)
+            .then(res => {
+                alert("Bookmark deleted");
+                navigate("/logs")
+            })
+            .catch( err => console.error())
+        }
+    }
 
     return (
         <div className='LogDetails'>
             <LogCard log={log}/>
             <section>
                 <button onClick={() => navigate("/logs")}>Back</button>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => navigate(`/logs/${index}/edit`) }>Edit</button>
+                <button onClick={() => deleteLogReq(index)}>Delete</button>
             </section>
         </div>
     );

@@ -7,7 +7,7 @@ const LogCard = ({log :{
     mistakesWereMadeToday, 
     daysSinceLastCrisis}}) => {
     return (
-        <div>
+        <div className='LogCard'>
             <span>{captainName}</span>
             <span>{title}</span>
             <span>{post}</span>

@@ -5,9 +5,9 @@ import NavBar from "./components/NavBar";
 
 import Home from "./components/Home";
 import Logs from "./components/Logs/Logs";
-import NewLog from "./components/NewLog/NewLog";
+import NewLog from "./components/EditLog/NewLog";
 import LogDetails from "./components/LogDetails/LogDetails";
-
+import EditLog from "./components/EditLog/EditLog";
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
               <Route path="/logs" element={<Logs/>}/>
               <Route path="/new" element={<NewLog/>}/>
               <Route path="/logs/:index" element={<LogDetails/>}/>
+              <Route path="/logs/:index/edit" element={<EditLog/>}/>
             </Routes>
           </main>
         </Router>
