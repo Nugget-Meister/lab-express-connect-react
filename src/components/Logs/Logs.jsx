@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 
 const API = import.meta.env.VITE_BASE_URL
 
@@ -16,10 +17,10 @@ useEffect(() => {
 }, [])
 console.log(logs)
 
+
     return (
         <div className='Logs'>
-                <section>
-                    <table>
+                    <Table>
                         <thead>
                             <tr>
                                 <th>Mistakes</th>
@@ -32,8 +33,7 @@ console.log(logs)
                                 return <Log key={index} log={log} index={index}/>
                             })}
                         </tbody>
-                    </table>
-                </section>
+                    </Table>
         </div>
     );
 }

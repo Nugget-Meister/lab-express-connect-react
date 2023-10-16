@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+
+
 const LogForm = ({index, type}) => {
 
     const API = import.meta.env.VITE_BASE_URL
@@ -83,7 +87,7 @@ const LogForm = ({index, type}) => {
 
     
     return (
-        <form  className="LogForm"  onSubmit={handleSubmit}>
+        <Form  className="LogForm"  onSubmit={handleSubmit}>
             <label htmlFor="captainName">Captain's Name:</label>
             <input type="text" 
                 onChange={handleChange} 
@@ -115,7 +119,7 @@ const LogForm = ({index, type}) => {
                 checked={log.mistakesWereMadeToday} 
             /> <br />
             <button type="submit">Submit</button>
-        </form>
+        </Form>
     );
 }
 
